@@ -15,25 +15,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zgX-5Y-SGq">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zgX-5Y-SGq">
+                                <rect key="frame" x="0.0" y="100" width="414" height="801"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="xYP-nf-Tvg"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="KcK-Bz-3fn"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hMj-fY-bF5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="osh-s5-u2q"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WS3-2O-Jh7"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zgX-5Y-SGq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="KcX-Ht-d9D"/>
+                            <constraint firstItem="hMj-fY-bF5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="814-1P-To1"/>
+                            <constraint firstItem="zgX-5Y-SGq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="39" id="DlM-JU-0Ja"/>
+                            <constraint firstItem="hMj-fY-bF5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EHr-cE-3V7"/>
+                            <constraint firstItem="zgX-5Y-SGq" firstAttribute="top" secondItem="hMj-fY-bF5" secondAttribute="bottom" id="IOd-J5-wGZ"/>
                             <constraint firstItem="zgX-5Y-SGq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XIZ-ZC-lkg"/>
-                            <constraint firstItem="zgX-5Y-SGq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="fdu-eP-J3L"/>
+                            <constraint firstItem="hMj-fY-bF5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gKs-Si-gLy"/>
                             <constraint firstItem="zgX-5Y-SGq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wrw-zf-JHL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="hMj-fY-bF5" id="Pdu-Yz-S3u"/>
                         <outlet property="tableView" destination="zgX-5Y-SGq" id="tPj-Wy-qlW"/>
                     </connections>
                 </viewController>

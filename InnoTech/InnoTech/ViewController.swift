@@ -10,6 +10,8 @@ import UIKit
 import BaseJson4
 class ViewController: UIViewController {
     var arrData = [PhotoInfo]()
+    var arrShowData = [PhotoInfo]()
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,20 +20,39 @@ class ViewController: UIViewController {
         APIManager.share.loadData {[weak self] (infos) in
             if let infos = infos {
                 self?.arrData = infos
-                self!.tableView.reloadData()
+                self?.filterData()
             }
         }
     }
+    
+    func filterData(_ searchText:String? = nil) {
+        if let searchText = searchText {
+            arrShowData = arrData.filter { (info) -> Bool in
+                return info.title.contains(searchText)
+            }
+        }else{
+            arrShowData = arrData
+        }
+        
+        tableView.reloadData()
+    }
+}
+
+extension ViewController : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterData(searchText.count > 0 ? searchText : nil)
+    }
+    
 }
 
 extension ViewController : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrData.count
+        return arrShowData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-        cell.setInfo(info: arrData[indexPath.row]) {
+        cell.setInfo(info: arrShowData[indexPath.row]) {
 //            tableView.reloadRows(at: [indexPath], with: .none)
 //            tableView.beginUpdates()
 //            tableView.endUpdates()
@@ -40,7 +61,7 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let info = arrData[indexPath.row]
+        let info = arrShowData[indexPath.row]
         print(info.description)
     }
 }
