@@ -7,11 +7,21 @@
 //
 
 import Foundation
-
+import Alamofire
 class APIManager {
     static let share = APIManager()
-    func loadData() {
+    func loadData(_ callBack: @escaping([PhotoInfo]?)->()) {
         let url = "https://jsonplaceholder.typicode.com/photos"
-        
+        AF.request(url).response { (response) in
+            if let data = response.data {
+                if let photos = data.toObj(type: [PhotoInfo].self){
+                    callBack(photos)
+                }else{
+                    callBack(nil)
+                }
+            }else{
+                callBack(nil)
+            }
+        }
     }
 }

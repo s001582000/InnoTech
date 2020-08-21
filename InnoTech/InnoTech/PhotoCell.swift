@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import SDWebImage
 class PhotoCell: UITableViewCell {
 
+    @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var imgvPhoto: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +21,13 @@ class PhotoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setInfo(info:PhotoInfo, callBack:@escaping()->()) {
+        imgvPhoto.sd_setImage(with: URL(string: info.thumbnailUrl)) { (image, error, type, url) in
+            callBack()
+        }
+        lblMessage.text = info.title
     }
     
 }
