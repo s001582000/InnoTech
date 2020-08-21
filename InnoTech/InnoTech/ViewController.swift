@@ -43,6 +43,9 @@ extension ViewController : UISearchBarDelegate {
         filterData(searchText.count > 0 ? searchText : nil)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
 extension ViewController : UITableViewDataSource , UITableViewDelegate {
@@ -53,9 +56,11 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         cell.setInfo(info: arrShowData[indexPath.row]) {
-//            tableView.reloadRows(at: [indexPath], with: .none)
-//            tableView.beginUpdates()
-//            tableView.endUpdates()
+//            tableView.reloadData()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+//            self.tableView.reloadRows(at: [indexPath], with: .none)
+            
         }
         return cell
     }

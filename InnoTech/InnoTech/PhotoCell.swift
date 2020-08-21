@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 class PhotoCell: UITableViewCell {
 
+    @IBOutlet weak var cstImageHeight: NSLayoutConstraint!
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var imgvPhoto: UIImageView!
     override func awakeFromNib() {
@@ -23,9 +24,13 @@ class PhotoCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setInfo(info:PhotoInfo, callBack:@escaping()->()) {
+    func setInfo(info:PhotoInfo, completedBlock:@escaping()->()) {
         imgvPhoto.sd_setImage(with: URL(string: info.thumbnailUrl)) { (image, error, type, url) in
-            callBack()
+            let height = image?.size.height ?? 0
+            if self.cstImageHeight.constant != height {
+                self.cstImageHeight.constant = height
+                completedBlock()
+            }
         }
         lblMessage.text = info.title
     }
