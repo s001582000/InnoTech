@@ -15,9 +15,13 @@
 		58FE98FD24EFED8C00A4BCAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FE98FB24EFED8C00A4BCAC /* LaunchScreen.storyboard */; };
 		58FE990624EFEF4600A4BCAC /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE990424EFEF4600A4BCAC /* PhotoCell.swift */; };
 		58FE990724EFEF4600A4BCAC /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58FE990524EFEF4600A4BCAC /* PhotoCell.xib */; };
+		58FE990924EFF11700A4BCAC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE990824EFF11700A4BCAC /* APIManager.swift */; };
+		BD32051AEB6CF2DADDD8CC4B /* Pods_InnoTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8823D8C7F2A4D93F6FA61F /* Pods_InnoTech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		146EBECB98522E491DE0C86F /* Pods-InnoTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnoTech.debug.xcconfig"; path = "Target Support Files/Pods-InnoTech/Pods-InnoTech.debug.xcconfig"; sourceTree = "<group>"; };
+		2C3DDC4BB078DCD065DDDE98 /* Pods-InnoTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnoTech.release.xcconfig"; path = "Target Support Files/Pods-InnoTech/Pods-InnoTech.release.xcconfig"; sourceTree = "<group>"; };
 		58FE98ED24EFED8700A4BCAC /* InnoTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnoTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FE98F024EFED8700A4BCAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58FE98F224EFED8700A4BCAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 		58FE98FE24EFED8C00A4BCAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58FE990424EFEF4600A4BCAC /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		58FE990524EFEF4600A4BCAC /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		58FE990824EFF11700A4BCAC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FC8823D8C7F2A4D93F6FA61F /* Pods_InnoTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InnoTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD32051AEB6CF2DADDD8CC4B /* Pods_InnoTech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1336355B7735E7F9ECDE16AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				146EBECB98522E491DE0C86F /* Pods-InnoTech.debug.xcconfig */,
+				2C3DDC4BB078DCD065DDDE98 /* Pods-InnoTech.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		58FE98E424EFED8700A4BCAC = {
 			isa = PBXGroup;
 			children = (
 				58FE98EF24EFED8700A4BCAC /* InnoTech */,
 				58FE98EE24EFED8700A4BCAC /* Products */,
+				1336355B7735E7F9ECDE16AD /* Pods */,
+				7168AB4D064560C70D1FA8BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,11 +85,20 @@
 				58FE98F624EFED8700A4BCAC /* Main.storyboard */,
 				58FE990424EFEF4600A4BCAC /* PhotoCell.swift */,
 				58FE990524EFEF4600A4BCAC /* PhotoCell.xib */,
+				58FE990824EFF11700A4BCAC /* APIManager.swift */,
 				58FE98F924EFED8C00A4BCAC /* Assets.xcassets */,
 				58FE98FB24EFED8C00A4BCAC /* LaunchScreen.storyboard */,
 				58FE98FE24EFED8C00A4BCAC /* Info.plist */,
 			);
 			path = InnoTech;
+			sourceTree = "<group>";
+		};
+		7168AB4D064560C70D1FA8BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC8823D8C7F2A4D93F6FA61F /* Pods_InnoTech.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58FE990124EFED8C00A4BCAC /* Build configuration list for PBXNativeTarget "InnoTech" */;
 			buildPhases = (
+				5375AA9C494418E3CF21A62E /* [CP] Check Pods Manifest.lock */,
 				58FE98E924EFED8700A4BCAC /* Sources */,
 				58FE98EA24EFED8700A4BCAC /* Frameworks */,
 				58FE98EB24EFED8700A4BCAC /* Resources */,
+				5399DDC646F4C5F67BF9008F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +170,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5375AA9C494418E3CF21A62E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InnoTech-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5399DDC646F4C5F67BF9008F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InnoTech/Pods-InnoTech-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InnoTech/Pods-InnoTech-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InnoTech/Pods-InnoTech-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58FE98E924EFED8700A4BCAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -147,6 +219,7 @@
 			files = (
 				58FE990624EFEF4600A4BCAC /* PhotoCell.swift in Sources */,
 				58FE98F524EFED8700A4BCAC /* ViewController.swift in Sources */,
+				58FE990924EFF11700A4BCAC /* APIManager.swift in Sources */,
 				58FE98F124EFED8700A4BCAC /* AppDelegate.swift in Sources */,
 				58FE98F324EFED8700A4BCAC /* SceneDelegate.swift in Sources */,
 			);
@@ -290,6 +363,7 @@
 		};
 		58FE990224EFED8C00A4BCAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146EBECB98522E491DE0C86F /* Pods-InnoTech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,6 +381,7 @@
 		};
 		58FE990324EFED8C00A4BCAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C3DDC4BB078DCD065DDDE98 /* Pods-InnoTech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
