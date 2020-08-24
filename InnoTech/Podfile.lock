@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.2.2)
+  - BaseJson4 (1.07)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - BaseJson4
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BaseJson4
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  BaseJson4: 0c2f9a82205d45f87d425d8be940b6b1c54b585c
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+
+PODFILE CHECKSUM: 6c08f18568ede781c70305dcfa5620b149246c8f
+
+COCOAPODS: 1.8.4

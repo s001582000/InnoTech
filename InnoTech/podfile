@@ -1,0 +1,7 @@
+
+target 'InnoTech' do
+use_frameworks!
+pod 'SDWebImage'
+pod 'Alamofire'
+pod 'BaseJson4'
+end

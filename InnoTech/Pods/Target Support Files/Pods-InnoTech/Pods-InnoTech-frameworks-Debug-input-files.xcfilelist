@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-InnoTech/Pods-InnoTech-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/BaseJson4/BaseJson4.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
